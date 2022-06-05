@@ -1,8 +1,6 @@
 import './App.css';
 import { useState } from 'react';
 
-
-
 function App() {
 
   let [글제목, 글제목변경] = useState(['test1', 'test2', 'test3']);
