@@ -3,12 +3,14 @@ import './App.css';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 // FrontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faOutdent, faSeedling } from "@fortawesome/free-solid-svg-icons";
+import { faSeedling } from "@fortawesome/free-solid-svg-icons";
 // 라우팅
 import { Route, Routes, Link, useNavigate, Outlet } from 'react-router-dom';
 // code
 import { useState } from 'react';
 import data from './machinedata.js';
+import ThingDetail from './route/thingDetail';
+import About from './route/about';
 
 function App(){
 
@@ -39,7 +41,7 @@ function App(){
           <div className="main_products">
             <div className="main_products_things">
               {
-                machine.map((a, i) => {
+                machine.map((a, i) => { 
                   return (
                     <Thing machine={ machine[i] }></Thing>
                   )
@@ -51,10 +53,10 @@ function App(){
         }></Route>
 
         {/* 상품 상세 페이지 */}
-        <Route path="/detail" element= {
+        <Route path="/detail/:id" element= {
           <>
-          <div className="main_products_things_detail">
-            <ThingDetail machine={ machine[0] }></ThingDetail>
+          <div className="main_products_detail">
+            <ThingDetail machine={ machine }></ThingDetail>
           </div>
           </>
         }></Route>
@@ -74,7 +76,7 @@ function App(){
 
         {/* 404에러 페이지 */}
         <Route path="*" element= {
-          <div> 404 page </div>
+          <div> 404 error page </div>
         }></Route>
       </Routes>
 
@@ -82,38 +84,13 @@ function App(){
   )
 }
 
-// 메인 페이지
+// 메인 페이지 상품
 function Thing(props) {
   return (
     <div>
       <img src={'https://www.yanmar.com/ltc/kr/agri/img/' + props.machine.code + '.jpg'} width="70%"></img>
       <h4>{ props.machine.title }</h4>
-      <p>{ props.machine.price }</p>
-    </div>
-  )
-}
-
-// 상품 상세 페이지
-function ThingDetail(props) {
-  return (
-    <div>
-      <img src={'https://www.yanmar.com/ltc/kr/agri/img/' + props.machine.code + '.jpg'} width="70%"></img>
-      <div className="main_products_things_detail_content">
-        <h4>{ props.machine.title }</h4>
-        <p>{ props.machine.content }</p>
-        <p>{ props.machine.price }</p>
-      </div>
-    </div>
-  )
-}
-
-// 회사 정보 페이지
-function About() {
-  return (
-    <div>
-      <h4> 억새풀 뜻 </h4>
-      <h4> 위치 </h4>
-      <h4> 주소 </h4>
+      <p> . </p>
     </div>
   )
 }
