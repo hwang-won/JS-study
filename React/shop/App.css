@@ -1,3 +1,7 @@
+.App {
+  text-align: center;
+}
+
 .main_background {
   height: 500px;
   background-image: url('http://www.rda.go.kr/webzine/2020/07/images/sub1-2_img02.jpg');
@@ -5,14 +9,14 @@
   background-position: center;
 }
 
-.main_goods_things {
+.main_products_things {
   display: flex;
   justify-content: space-between;
   margin: 80px;
 }
 
 @media screen and (max-width:768px) {
-  .main_goods_things {
+  .main_products_things {
     flex-direction: column;
   }
 }
