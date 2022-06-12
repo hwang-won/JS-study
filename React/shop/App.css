@@ -16,7 +16,8 @@ h5 {
 
 .main_products_things {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 80px;
 }
 
@@ -28,6 +29,15 @@ h5 {
   background-color: rgb(253, 89, 89);
 }
 
+.rantalBt {
+  border: 0;
+  border-radius:  5px;
+  font-size: 2vh;
+  color: white;
+  background-color: rgb(14, 10, 68);
+
+}
+
 .coupon {
   display: flex;
   align-items: center;
@@ -36,9 +46,5 @@ h5 {
   height: 70px;
 }
 
-@media screen and (max-width:768px) {
-  .main_products_things {
-    flex-direction: column;
-  }
-}
+
 
