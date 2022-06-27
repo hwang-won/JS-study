@@ -1,4 +1,4 @@
-# JS-study React
+# JS-study
 
 ## 공부 한 책, 강의
 > 'Dream Coding'  
