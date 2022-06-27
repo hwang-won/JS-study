@@ -11,9 +11,10 @@ import axios from 'axios';
 // code
 import { useState } from 'react';
 import data from './machinedata.js';
-import ThingDetail from './route/thingDetail';
-import About from './route/about';
-import HostMode from './route/hostMode';
+import ThingDetail from './route/thingDetail.js';
+import Cart from './route/cart.js';
+import About from './route/about.js';
+import HostMode from './route/hostMode.js';
 
 function App(){
 
@@ -36,6 +37,7 @@ function App(){
           <Nav.Link onClick={()=>{ navigate('/hostMode') }}>호스트 모드</Nav.Link>
         </Nav>
         <Nav className="me-auto">
+          <Nav.Link onClick={()=>{ navigate('/cart') }}>장바구니</Nav.Link>
           <Nav.Link onClick={()=>{ navigate('/') }}>로그인</Nav.Link>
         </Nav>
         </Container>
@@ -64,10 +66,13 @@ function App(){
 
         {/* 상품 상세 페이지 */}
         <Route path="/detail/:id" element= {
-          <>
-          <div className="main_products_detail">
             <ThingDetail machine={ machine }></ThingDetail>
-          </div>
+        }></Route>
+
+        {/* 장바구니 페이지 */}
+        <Route path="/cart" element= {
+          <>
+            <Cart></Cart>
           </>
         }></Route>
 

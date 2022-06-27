@@ -7,6 +7,7 @@ let machinedata = [
         content : "Made in Korea",
         price : 1200000,
         img : "https://www.yanmar.com/ltc/kr/agri/img/d3da6c6016/img_index_01.jpg",
+        code : "d3da6c6016/img_index_01"
     },
     {
         id : 1,
