@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Nav } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { addItem } from "./../store.js";
 
 // 상품 상세 페이지
 function ThingDetail(props) {
@@ -10,6 +12,7 @@ function ThingDetail(props) {
     let [alert, setAlert] = useState(true);
     let [탭, 탭변경] = useState(0);
     let [fade1, setFade1] = useState('');
+    let dispatch = useDispatch();
 
     useEffect(()=> {
         let a = setTimeout(()=>{ }, 2000);
@@ -39,7 +42,9 @@ function ThingDetail(props) {
                     <h4 className="pt-5">{ detailThing.title }</h4>
                     <p>{ detailThing.content }</p>
                     <p>{ detailThing.price }원</p>
-                    <button className="btn btn-danger"> 임대하기 </button>
+                    <button className="btn btn-danger" onClick={()=>{
+                        dispatch(addItem( {id : detailThing.id, name : detailThing.title, count : 1} ))
+                    }}> 주문하기 </button>
                 </div>
             </div>
             <Nav variant="tabs" defaultActiveKey="link0">
