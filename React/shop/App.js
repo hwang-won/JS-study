@@ -9,14 +9,19 @@ import { Route, Routes, Link, useNavigate, Outlet } from 'react-router-dom';
 // 서버 통신 axios
 import axios from 'axios';
 // code
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import data from './machinedata.js';
 import ThingDetail from './route/thingDetail.js';
 import Cart from './route/cart.js';
 import About from './route/about.js';
 import HostMode from './route/hostMode.js';
 
-function App(){
+function App() {
+
+  // 사이트 재접속시에도 데이터 유지 가능 localStorage
+  useEffect(()=>{
+    localStorage.setItem('watched', JSON.stringify([ ]))
+  },[])
 
   let [machine] = useState(data);
   let navigate = useNavigate();
@@ -28,8 +33,6 @@ function App(){
         <Navbar.Brand onClick={()=>{ navigate('/') }}><FontAwesomeIcon icon={ faSeedling }/> 억새풀 <FontAwesomeIcon icon="fa-solid fa-seedling" /></Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link onClick={()=>{ navigate('/') }}>임대신청</Nav.Link>
-          <Nav.Link onClick={()=>{ navigate('/') }}>커뮤니티</Nav.Link>
-          <Nav.Link onClick={()=>{ navigate('/') }}>자료실</Nav.Link>
           <Nav.Link onClick={()=>{ navigate('/') }}>고객지원</Nav.Link>
           <Nav.Link onClick={()=>{ navigate('/about') }}>회사소개</Nav.Link>
         </Nav>
@@ -55,7 +58,7 @@ function App(){
               {
                 machine.map((a, i) => { 
                   return (
-                    <Thing machine={ machine[i] }></Thing>
+                    <Thing machine={machine[i]} index={i} key={i} ></Thing>
                   )
                 })
               }
@@ -110,9 +113,11 @@ function App(){
 function Thing(props) {
   return (
     <div>
-      <img src={ props.machine.img } width="50%"></img>
-      <h4>{ props.machine.title }</h4>
-      <p> . </p>
+      <Link to ={`detail/${(props.index)}`} className='text-link'>
+        <img src={ props.machine.img } width="50%"></img>
+        <h4>{ props.machine.title }</h4>
+        <p> . </p>
+      </Link>
     </div>
   )
 }

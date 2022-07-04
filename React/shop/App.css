@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .start {
   opacity: 0;
 }
