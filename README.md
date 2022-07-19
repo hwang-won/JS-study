@@ -6,4 +6,9 @@
 
 
 
-### css 수직, 수펴 정렬
+### css 정렬
+
+1.     
+    display: flex;
+    justify-content: center;
+    align-items: center;
