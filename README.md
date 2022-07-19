@@ -12,15 +12,15 @@
 > margin: auto
 
 #### table 정렬
-> display: table;
+> display: table; 
 > 
-> display: table-cell;
-> vertical-align: middle;
-
+> display: table-cell; 
+> vertical-align: middle; 
+ 
 #### flex 중간 가로 정렬
-> display: flex;
-> justify-content: center;
-> align-items: center;
+> display: flex; 
+> justify-content: center; 
+> align-items: center; 
 >
 > display: flex;
 > flex-direction: row;
