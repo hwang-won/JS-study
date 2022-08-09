@@ -8,7 +8,7 @@ class App extends Component {
       <div>
         <p>test</p>
         <MyComponent>Hello, MyComponent</MyComponent>
-        <MyInput></MyInput>
+        <MyInput>styled-component 연습</MyInput>
         <Box>Hello, Box</Box>
         <Button>안녕</Button>
         <Button inverted={true}>테두리만</Button>
