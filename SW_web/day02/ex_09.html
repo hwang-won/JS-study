@@ -33,7 +33,12 @@
                     const f = Number(num1.value) + Number(num2.value);
                     result.innerHTML = "결과 : " + f;
                 } else if (oper.value === "-") {
-                    result.innerHTML = "결과 : " + num1.value - num2.value;
+                    const m = Number(num1.value) - Number(num2.value);
+                    if (m <= 0) {
+                        result.innerHTML = "중학생 때 배우세요";
+                    } else {
+                        result.innerHTML = "결과 : " + m;
+                    }
                 } else if (oper.value === "*") {
                     result.innerHTML = "결과 : " + num1.value * num2.value;
                 }
