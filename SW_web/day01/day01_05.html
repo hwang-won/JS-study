@@ -46,35 +46,5 @@
                 };
             }
         </script>
-
-        <script>
-            var colors = ["blue", "orange", "brown", "pink"];
-            var playBtnArr = document.getElementsByClassName("playBtn");
-            var box = document.getElementById("box");
-            console.log(playBtnArr);
-            // playBtnArr[0].x = 0;
-            // playBtnArr[0].y = 0;
-            // playBtnArr[1].x = 200;
-            // playBtnArr[1].y = 0;
-            // playBtnArr[2].x = 0;
-            // playBtnArr[2].y = 200;
-            // playBtnArr[3].x = 200;
-            // playBtnArr[3].y = 200;
-            //var posArr = [ [0,0],[200,0],[0,200],[200,200] ];
-            var posArr = [
-                { x: 0, y: 0 },
-                { x: 200, y: 0 },
-                { x: 0, y: 200 },
-                { x: 200, y: 200 },
-            ];
-            for (var cnt = 0; cnt < playBtnArr.length; cnt++) {
-                playBtnArr[cnt].x = posArr[cnt].x;
-                playBtnArr[cnt].y = posArr[cnt].y;
-                playBtnArr[cnt].onclick = function (event) {
-                    box.style.left = this.x + "px";
-                    box.style.top = this.y + "px";
-                };
-            }
-        </script>
     </body>
 </html>
