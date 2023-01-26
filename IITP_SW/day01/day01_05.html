@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #box {
+                width: 100px;
+                height: 100px;
+                background-color: aquamarine;
+                border: 1px solid black;
+                /* left는 요소가 레이어야 적용됨. position */
+                position: relative;
+                left: 300px;
+                transition: 0.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="playBtn1">0,0</button>
+        <button id="playBtn2">0,200</button>
+        <button id="playBtn3">200,200</button>
+        <button id="playBtn4">200,0</button>
+
+        <div id="box">Box</div>
+
+        <script>
+            let box = document.getElementById("box");
+            let colors = ["blue", "orange", "brown", "pink"];
+            const buttons = document.querySelectorAll("button");
+            // console.dir(buttons);
+
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].i = i;
+                buttons[i].onclick = function (e) {
+                    // console.log(this);
+                    // console.log(this.i);
+                    const leftText = this.innerText.split(",");
+                    // console.log(leftText[0]);
+                    // console.log(leftText[1]);
+                    box.style.left = leftText[0] + "px";
+                    box.style.top = leftText[1] + "px";
+                    box.style.backgroundColor = colors[this.i];
+                };
+            }
+        </script>
+    </body>
+</html>
