@@ -30,11 +30,11 @@
             resultBtn.onclick = function (e) {
                 console.log(num1.value);
                 if (oper.value === "+") {
-                    const f = Number(num1.value) + Number(num2.value);
-                    result.innerHTML = "결과 : " + f;
+                    const p = Number(num1.value) + Number(num2.value);
+                    result.innerHTML = "결과 : " + p;
                 } else if (oper.value === "-") {
                     const m = Number(num1.value) - Number(num2.value);
-                    if (m <= 0) {
+                    if (m < 0) {
                         result.innerHTML = "중학생 때 배우세요";
                     } else {
                         result.innerHTML = "결과 : " + m;
