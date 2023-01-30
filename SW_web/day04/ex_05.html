@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 50px;
+            }
+            div.container div {
+                padding: 3px;
+                margin: 3px;
+                border: 3px solid navy;
+                border-radius: 1px;
+                width: 910px;
+                overflow: hidden;
+                text-align: center;
+            }
+            .header {
+                background-color: yellow;
+            }
+            .header nav li {
+                float: left;
+                width: 178px;
+                height: 27px;
+                margin-right: 3px;
+                border: 1px solid black;
+                box-sizing: border-box;
+                list-style: none;
+                text-align: center;
+                margin-top: 15px;
+                margin-bottom: 5px;
+                background-color: pink;
+            }
+            div.middle > div {
+                width: 150px;
+                float: left;
+                overflow: hidden;
+                background-color: pink;
+            }
+            div.middle div.center {
+                background-color: pink;
+                width: 550px;
+            }
+            div.footer {
+                clear: both;
+                height: 80px;
+                background-color: yellow;
+            }
+            div.center > div {
+                background-color: green;
+                height: 80px;
+                width: 260px;
+            }
+            div.right {
+                background-color: pink;
+                overflow: hidden;
+            }
+            div.center div:nth-child(1) {
+                width: 530px;
+            }
+            div.center div:nth-child(2) {
+                background-color: green;
+                width: 530px;
+            }
+            div.center div:nth-child(3) {
+                background-color: green;
+                width: 530px;
+            }
+            div.middle {
+                background-color: yellow;
+            }
+            div.right div:nth-child(1) {
+                height: 50px;
+                width: 130px;
+                margin-bottom: 10px;
+                background-color: green;
+            }
+            div.right div:nth-child(2) {
+                height: 152px;
+                width: 130px;
+                margin-bottom: 50px;
+                background-color: green;
+            }
+            div.left div {
+                overflow: hidden;
+                width: 130px;
+                background-color: green;
+            }
+            div.left div > div {
+                height: 37px;
+                width: 110px;
+                background-color: skyblue;
+                border: 4px solid navy;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Welcome to My Homepage</h1>
+                <nav>
+                    <ul>
+                        <li>HOME</li>
+                        <li>PROFILE</li>
+                        <li>GALLERY</li>
+                        <li>LECTURE</li>
+                        <li>BOARD</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="middle">
+                <div class="left">
+                    <div>
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                        <div>5</div>
+                    </div>
+                </div>
+                <div class="center">
+                    <div>banner</div>
+                    <div>section1</div>
+                    <div>section2</div>
+                </div>
+                <div class="right">
+                    <div>sidebar</div>
+                    <div>낙원 어쩌구...</div>
+                </div>
+            </div>
+            <div class="footer">
+                그들은 우리 그들의 사막이다. 사막 어쩌구...
+            </div>
+        </div>
+    </body>
+</html>
