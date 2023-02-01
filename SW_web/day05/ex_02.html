@@ -57,7 +57,7 @@
         </style>
     </head>
     <body>
-        <h1>대구 팔공산 갓바위</h1>
+        <h1>과일 사진</h1>
         <hr />
         <div id="box">
             <div class="message">마지막입니다!</div>
@@ -80,7 +80,7 @@
 
             let imgs = ["img01", "img02", "img03", "img04"];
             boxLis.forEach((item, i) => {
-                item.innerHTML = "<img src='../img/" + imgs[i] + ".jpg'>";
+                item.innerHTML = "<img src='images/" + imgs[i] + ".jpg'>";
             });
 
             let x = 0;
@@ -111,7 +111,7 @@
                     if (idx < 0) {
                         message.innerText = "처음입니다!";
                         message.style.display = "block";
-                        setTimeout(() => {
+                        setTimeout(function () {
                             message.style.display = "none";
                         }, 1000);
                         idx = 0;
